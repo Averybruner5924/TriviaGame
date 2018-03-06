@@ -43,11 +43,10 @@ function showScores() {
 
 // create questions
 var questions = [
-    new Question("Which one is not an object oriented programming language?", ["Java", "C#","C++", "C"], "C"),
-    new Question("Which language is used for styling web pages?", ["HTML", "JQuery", "CSS", "XML"], "CSS"),
-    new Question("There are ____ main components of object oriented programming.", ["1", "6","2", "4"], "4"),
-    new Question("Which language is used for web apps?", ["PHP", "Python", "Javascript", "All"], "All"),
-    new Question("MVC is a ____.", ["Language", "Library", "Framework", "All"], "Framework")
+    new Question("What is the name of the page for TGS?", ["Jacob", "Terry","Kenneth", "Keith"], "Kenneth"),
+    new Question("What does TGS stand for?", ["The Girl Show", "The Great Show", "The Girly Show", "That Good Show"], "The Girly Show"),
+    new Question("What is Jack never in boss of in 30 Rock", ["Automotives", "Microwaves","East Coast Programming", "Mailroom"], "Automotives"),
+    new Question("What is the name of Tracy Jordan's doctor?", ["Leo Di Caprio", "Leo Spaceman", "Alfred Moonbeam", "Griz"], "Leo Spaceman")
 ];
 
 // create quiz
@@ -55,3 +54,13 @@ var quiz = new Quiz(questions);
 
 // display quiz
 populate();
+
+
+//timer
+var timeleft = 30;
+var downloadTimer = setInterval(function(){
+timeleft--;
+document.getElementById("countdowntimer").textContent = timeleft;
+if(timeleft === 0)
+   showScores();
+},1000);
